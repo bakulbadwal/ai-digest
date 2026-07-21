@@ -2,7 +2,7 @@
 
 # AI Digest
 
-**A twice-weekly, personalized AI + markets briefing you run yourself — not a newsletter you subscribe to.**
+**A personalized AI + markets briefing, three times a week, that you run yourself — not a newsletter you subscribe to.**
 
 Most AI newsletters stop at headlines and treat everyone the same. This is a self-run [Claude Code](https://www.anthropic.com/claude-code) skill that scans the frontier the way *you'd* scan it — model releases, what builders are actually shipping, a GitHub scout tuned to your interests — and pairs it with a markets/deals/careers half, so you get one briefing that covers both the cutting edge and the business world around it.
 

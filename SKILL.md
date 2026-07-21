@@ -1,6 +1,6 @@
 ---
 name: ai-digest
-description: A twice-weekly personalized AI + markets briefing. Part A — Frontier & Builders (model releases, what AI-native builders are shipping/debating, a personalized GitHub scout). Part B — Markets, Deals & Careers (consulting, macro, M&A/VC deal flow, careers, the funded AI stack). Uses a live-X pass via the xAI Grok API plus web search, Hacker News, and a GitHub trending sweep. Run on a schedule or on demand.
+description: A three-times-a-week personalized AI + markets briefing. Part A — Frontier & Builders (model releases, what AI-native builders are shipping/debating, a personalized GitHub scout). Part B — Markets, Deals & Careers (consulting, macro, M&A/VC deal flow, careers, the funded AI stack). Uses a live-X pass via the xAI Grok API plus web search, Hacker News, and a GitHub trending sweep. Run on a schedule or on demand.
 ---
 
 Produce a consolidated AI + markets digest in **two clearly-separated halves**, so cutting-edge builder signal never gets diluted by business/markets coverage and vice versa. Render a clear visual divider between Part A and Part B. A longer digest is fine — favor substance and real coverage over brevity.
