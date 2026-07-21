@@ -46,6 +46,7 @@ Only write a full item for candidates scoring **3+/5**. Silently drop the rest �
 Intentionally **broader than AI** — make sure the non-AI categories get real representation. Source from the open web (firm publications, deal news, reputable press, VC/consulting newsletters) + the Part-B Grok pass. Group loosely by theme:
 - **Consulting & Strategy** — McKinsey / Bain / BCG and top firms: notable reports, insights, moves (esp. AI or market-trend related).
 - **Macro & Investment Trends** — broad market/macro themes, not just AI.
+- **Market Pulse** — a compact snapshot, not a full daily market brief (no paid data feed needed — plain web search on any solid free source: index/quote sites, financial news, econ-calendar pages). 3-5 lines max, zero fine if quiet: (1) major index moves since the last digest (S&P/Nasdaq/etc. + a one-line reason — the multi-day gap since the last run, not "yesterday's close"), (2) notable FX/commodity/bond moves only if something actually moved meaningfully, (3) upcoming econ-calendar highlights (FOMC/CPI/jobs/etc.) before the next run.
 - **Capital Markets & M&A** — notable large deals, PE/VC mega-rounds, M&A across sectors.
 - **Careers** — notable role/company moves and discourse in the tracks _you_ care about (e.g. FDE / product / BD / strategy).
 - **The Established AI Stack** — infra, chips, model providers, enterprise application cos — the funded/established layers (leave the bleeding-edge builder layer to Part A).
