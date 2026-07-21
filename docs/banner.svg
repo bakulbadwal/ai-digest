@@ -1,16 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="AI Digest">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="AI Digest — noise to signal">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b1020"/>
-      <stop offset="0.55" stop-color="#0e1730"/>
-      <stop offset="1" stop-color="#111a3a"/>
+      <stop offset="0" stop-color="#080c18"/>
+      <stop offset="1" stop-color="#0d1428"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#4ade80"/>
       <stop offset="1" stop-color="#38bdf8"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
-      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.22"/>
+    <radialGradient id="glow" cx="0.92" cy="0.45" r="0.5">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nodeGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.55"/>
       <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
     </radialGradient>
   </defs>
@@ -18,30 +21,54 @@
   <rect width="1280" height="440" fill="url(#bg)"/>
   <rect width="1280" height="440" fill="url(#glow)"/>
 
-  <!-- hairline grid accents -->
-  <g stroke="#233" stroke-width="1" opacity="0.5">
-    <line x1="80" y1="120" x2="1200" y2="120"/>
-    <line x1="80" y1="360" x2="1200" y2="360"/>
+  <!-- ── noise → signal motif (right side): scatter converging into one clean line ── -->
+  <g>
+    <!-- noise field: wide vertical scatter that tightens toward the line -->
+    <circle cx="712" cy="128" r="3.0" fill="#64748b" opacity="0.50"/>
+    <circle cx="726" cy="292" r="2.6" fill="#64748b" opacity="0.44"/>
+    <circle cx="739" cy="183" r="3.2" fill="#7dd3fc" opacity="0.48"/>
+    <circle cx="748" cy="248" r="2.4" fill="#64748b" opacity="0.55"/>
+    <circle cx="762" cy="152" r="2.9" fill="#64748b" opacity="0.48"/>
+    <circle cx="771" cy="305" r="2.5" fill="#4ade80" opacity="0.40"/>
+    <circle cx="778" cy="271" r="2.7" fill="#64748b" opacity="0.46"/>
+    <circle cx="791" cy="196" r="3.3" fill="#7dd3fc" opacity="0.52"/>
+    <circle cx="799" cy="120" r="2.4" fill="#64748b" opacity="0.42"/>
+    <circle cx="806" cy="243" r="2.6" fill="#64748b" opacity="0.58"/>
+    <circle cx="818" cy="139" r="2.8" fill="#64748b" opacity="0.46"/>
+    <circle cx="833" cy="287" r="3.0" fill="#64748b" opacity="0.48"/>
+    <circle cx="847" cy="175" r="2.6" fill="#4ade80" opacity="0.52"/>
+    <circle cx="861" cy="228" r="3.2" fill="#64748b" opacity="0.60"/>
+    <circle cx="874" cy="158" r="2.5" fill="#64748b" opacity="0.48"/>
+    <circle cx="888" cy="262" r="2.9" fill="#7dd3fc" opacity="0.52"/>
+    <circle cx="902" cy="199" r="2.7" fill="#64748b" opacity="0.62"/>
+    <circle cx="915" cy="246" r="3.0" fill="#64748b" opacity="0.50"/>
+    <circle cx="929" cy="170" r="2.5" fill="#64748b" opacity="0.55"/>
+    <circle cx="942" cy="225" r="3.2" fill="#4ade80" opacity="0.55"/>
+    <circle cx="956" cy="190" r="2.6" fill="#64748b" opacity="0.60"/>
+    <circle cx="969" cy="243" r="2.8" fill="#64748b" opacity="0.52"/>
+    <circle cx="983" cy="205" r="3.0" fill="#7dd3fc" opacity="0.62"/>
+    <circle cx="996" cy="231" r="2.5" fill="#64748b" opacity="0.58"/>
+    <circle cx="1010" cy="198" r="2.7" fill="#64748b" opacity="0.66"/>
+    <circle cx="1023" cy="222" r="2.9" fill="#4ade80" opacity="0.64"/>
+    <circle cx="1036" cy="207" r="2.5" fill="#64748b" opacity="0.62"/>
+    <circle cx="1049" cy="219" r="2.7" fill="#7dd3fc" opacity="0.70"/>
+    <circle cx="1061" cy="209" r="2.4" fill="#64748b" opacity="0.66"/>
+    <circle cx="1073" cy="216" r="2.5" fill="#4ade80" opacity="0.72"/>
+    <circle cx="1084" cy="211" r="2.3" fill="#7dd3fc" opacity="0.76"/>
+    <!-- the clean signal line the noise resolves into -->
+    <line x1="1094" y1="213" x2="1216" y2="213" stroke="url(#signal)" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="1216" cy="213" r="16" fill="url(#nodeGlow)"/>
+    <circle cx="1216" cy="213" r="5.5" fill="#e0f2fe"/>
+    <!-- motif label -->
+    <text x="988" y="308" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" letter-spacing="3" fill="#475569">NOISE &#8594; SIGNAL</text>
   </g>
 
-  <!-- top eyebrow -->
-  <text x="82" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" letter-spacing="6" fill="#7dd3fc">TWICE&#8211;WEEKLY &#183; SELF&#8211;RUN &#183; YOURS TO KEEP</text>
+  <!-- ── text block ── -->
+  <text x="80" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="5" fill="#7dd3fc" opacity="0.85">RUN IT YOURSELF &#183; TWICE A WEEK &#183; PENNIES PER RUN</text>
 
-  <!-- title -->
-  <text x="80" y="240" font-family="Georgia, 'Times New Roman', serif" font-size="132" font-weight="700" fill="#f8fafc">AI Digest</text>
-  <rect x="84" y="266" width="300" height="6" rx="3" fill="url(#accent)"/>
+  <text x="76" y="266" font-family="Georgia, 'Times New Roman', serif" font-size="128" font-weight="700" fill="#f8fafc">AI Digest</text>
 
-  <!-- subtitle -->
-  <text x="82" y="322" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="30" fill="#cbd5e1">A personalized AI + markets briefing you run yourself &#8212; not a newsletter you subscribe to.</text>
+  <text x="80" y="322" font-family="-apple-system, 'Segoe UI', Roboto, sans-serif" font-size="28" fill="#94a3b8">Your AI + markets briefing &#8212; not a newsletter you subscribe to.</text>
 
-  <!-- two-part chips -->
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" fill="#e2e8f0">
-    <rect x="82" y="386" width="330" height="40" rx="20" fill="#152142" stroke="#274" stroke-opacity="0.4"/>
-    <text x="106" y="412">Part A &#183; Frontier &amp; Builders</text>
-    <rect x="430" y="386" width="380" height="40" rx="20" fill="#152142" stroke="#274" stroke-opacity="0.4"/>
-    <text x="454" y="412">Part B &#183; Markets, Deals &amp; Careers</text>
-  </g>
-
-  <!-- corner mark -->
-  <text x="1198" y="416" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="18" fill="#64748b">grok live&#8211;X &#183; web &#183; HN &#183; github</text>
+  <text x="80" y="408" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="2" fill="#475569">grok live&#8211;X &#183; web &#183; hacker news &#183; github trending</text>
 </svg>
