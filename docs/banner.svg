@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="AI Digest">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#0e1730"/>
+      <stop offset="1" stop-color="#111a3a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="440" fill="url(#bg)"/>
+  <rect width="1280" height="440" fill="url(#glow)"/>
+
+  <!-- hairline grid accents -->
+  <g stroke="#233" stroke-width="1" opacity="0.5">
+    <line x1="80" y1="120" x2="1200" y2="120"/>
+    <line x1="80" y1="360" x2="1200" y2="360"/>
+  </g>
+
+  <!-- top eyebrow -->
+  <text x="82" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" letter-spacing="6" fill="#7dd3fc">TWICE&#8211;WEEKLY &#183; SELF&#8211;RUN &#183; YOURS TO KEEP</text>
+
+  <!-- title -->
+  <text x="80" y="240" font-family="Georgia, 'Times New Roman', serif" font-size="132" font-weight="700" fill="#f8fafc">AI Digest</text>
+  <rect x="84" y="266" width="300" height="6" rx="3" fill="url(#accent)"/>
+
+  <!-- subtitle -->
+  <text x="82" y="322" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="30" fill="#cbd5e1">A personalized AI + markets briefing you run yourself &#8212; not a newsletter you subscribe to.</text>
+
+  <!-- two-part chips -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" fill="#e2e8f0">
+    <rect x="82" y="386" width="330" height="40" rx="20" fill="#152142" stroke="#274" stroke-opacity="0.4"/>
+    <text x="106" y="412">Part A &#183; Frontier &amp; Builders</text>
+    <rect x="430" y="386" width="380" height="40" rx="20" fill="#152142" stroke="#274" stroke-opacity="0.4"/>
+    <text x="454" y="412">Part B &#183; Markets, Deals &amp; Careers</text>
+  </g>
+
+  <!-- corner mark -->
+  <text x="1198" y="416" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="18" fill="#64748b">grok live&#8211;X &#183; web &#183; HN &#183; github</text>
+</svg>
