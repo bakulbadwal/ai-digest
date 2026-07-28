@@ -1,6 +1,6 @@
-![AI Digest](docs/banner.svg)
+![AI Frontier Dispatch](docs/banner.svg)
 
-# AI Digest
+# AI Frontier Dispatch
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-skill-8A63D2)](https://code.claude.com/docs/en/skills)
@@ -11,7 +11,7 @@ Most AI newsletters stop at headlines and treat every reader the same. This is a
 
 It leans on **[Grok](https://x.ai)** for a live read of X (the only frontier model grounded on live posts), plus web search, **Hacker News**, and **GitHub / Hugging Face** trending. Nothing is hosted, nothing is shared, and there's no list to join — you run it on your own machine, on your own keys.
 
-![A run of AI Digest](docs/demo.gif)
+![A run of AI Frontier Dispatch](docs/demo.gif)
 
 ### 👉 [**Read a real digest →**](digests/2026-07-28.md)
 
@@ -59,24 +59,24 @@ Deliberately *not* adopted: scheduled CI runs (this needs Claude Code and your k
 **Option A — as a plugin (recommended, no file wrangling):**
 
 ```bash
-/plugin marketplace add bakulbadwal/ai-digest
+/plugin marketplace add bakulbadwal/ai-frontier-dispatch
 ```
 ```bash
-/plugin install ai-digest
+/plugin install ai-frontier-dispatch
 ```
 
-Run those from inside Claude Code. Then invoke it with `/ai-digest`.
+Run those from inside Claude Code. Then invoke it with `/ai-frontier-dispatch`.
 
 **Option B — as a local skill (if you'd rather just clone it):**
 
 ```bash
-git clone https://github.com/bakulbadwal/ai-digest.git ~/.claude/skills/ai-digest
+git clone https://github.com/bakulbadwal/ai-frontier-dispatch.git ~/.claude/skills/ai-frontier-dispatch
 ```
 
 **Option C — try it without installing:**
 
 ```bash
-claude --plugin-dir /path/to/ai-digest
+claude --plugin-dir /path/to/ai-frontier-dispatch
 ```
 
 ---
@@ -106,7 +106,7 @@ Keep that file private (`chmod 600 ~/.claude/.env`). No key? The digest still ru
 
 ## Running it
 
-- **On demand:** `/ai-digest`, or just ask Claude Code to *"run my digest."*
+- **On demand:** `/ai-frontier-dispatch`, or just ask Claude Code to *"run my digest."*
 - **On a schedule:** wire it to a Claude Code scheduled task (e.g. Tue/Thu/Sat mornings). It only needs your machine awake.
 
 The Grok pass also runs standalone:

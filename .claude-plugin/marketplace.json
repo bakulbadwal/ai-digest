@@ -1,5 +1,5 @@
 {
-  "name": "ai-digest",
+  "name": "ai-frontier-dispatch",
   "owner": {
     "name": "Bakul Badwal",
     "url": "https://github.com/bakulbadwal"
@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "ai-digest",
+      "name": "ai-frontier-dispatch",
       "source": "./",
       "description": "A personalized AI + markets briefing you run yourself. Part A covers frontier model releases, what AI-native builders are shipping, and a GitHub/Hugging Face scout tuned to your interests. Part B covers consulting, macro, M&A/VC deal flow, and careers.",
       "version": "1.1.0",
@@ -18,7 +18,7 @@
         "name": "Bakul Badwal",
         "url": "https://github.com/bakulbadwal"
       },
-      "homepage": "https://github.com/bakulbadwal/ai-digest",
+      "homepage": "https://github.com/bakulbadwal/ai-frontier-dispatch",
       "license": "MIT",
       "keywords": [
         "ai",

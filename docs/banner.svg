@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="AI Digest — a personalized AI and markets briefing you run yourself">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="AI Frontier Dispatch — a personalized AI and markets briefing you run yourself">
   <defs>
     <!-- warm paper canvas -->
     <linearGradient id="paper" x1="0" y1="0" x2="0.6" y2="1">
@@ -66,22 +66,24 @@
   <!-- ───────────────────── left: masthead ───────────────────── -->
 
   <!-- eyebrow -->
-  <text x="80" y="140" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+  <text x="80" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
         font-size="13" font-weight="500" letter-spacing="2.6" fill="#8e8b82">PERSONALIZED &#183; RUNS ON YOUR MACHINE</text>
 
-  <!-- wordmark -->
-  <text x="78" y="242" font-family="Copernicus, 'Tiempos Headline', Georgia, 'Times New Roman', serif"
-        font-size="104" font-weight="400" letter-spacing="-3" fill="#141413">AI Digest</text>
+  <!-- wordmark: stacked two-line masthead -->
+  <text x="78" y="208" font-family="Copernicus, 'Tiempos Headline', Georgia, 'Times New Roman', serif"
+        font-size="72" font-weight="400" letter-spacing="-2" fill="#141413">AI Frontier</text>
+  <text x="78" y="278" font-family="Copernicus, 'Tiempos Headline', Georgia, 'Times New Roman', serif"
+        font-size="72" font-weight="400" letter-spacing="-2" fill="#141413">Dispatch</text>
 
   <!-- coral rule: short solid segment + hairline continuation -->
-  <rect x="80" y="268" width="86" height="3" rx="1.5" fill="#cc785c"/>
-  <rect x="166" y="269" width="392" height="1" fill="#141413" opacity="0.14"/>
+  <rect x="80" y="304" width="86" height="3" rx="1.5" fill="#cc785c"/>
+  <rect x="166" y="305" width="392" height="1" fill="#141413" opacity="0.14"/>
 
   <!-- subhead -->
-  <text x="80" y="308" font-family="StyreneB, Inter, -apple-system, 'Segoe UI', Roboto, sans-serif"
-        font-size="23" font-weight="400" fill="#3d3d3a">Frontier signal and market signal &#8212;</text>
-  <text x="80" y="338" font-family="StyreneB, Inter, -apple-system, 'Segoe UI', Roboto, sans-serif"
-        font-size="23" font-weight="400" fill="#3d3d3a">one briefing, tuned to you.</text>
+  <text x="80" y="342" font-family="StyreneB, Inter, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="21" font-weight="400" fill="#3d3d3a">Frontier signal and market signal &#8212;</text>
+  <text x="80" y="368" font-family="StyreneB, Inter, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="21" font-weight="400" fill="#3d3d3a">one briefing, tuned to you.</text>
 
   <!-- source line -->
   <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#6c6a64">

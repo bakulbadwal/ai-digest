@@ -4,7 +4,7 @@ grok-x-pass.py — pull a live X (Twitter) read from the xAI Grok API.
 
 Grok is (as of 2026) the only frontier model with live grounding to X posts, so
 this asks it what the AI/tech world is discussing and shipping over a recent
-window. The AI Digest skill folds the answer into its "what builders are doing"
+window. The AI Frontier Dispatch skill folds the answer into its "what builders are doing"
 section — so you get X-native signal without having to live on the feed.
 
 Uses the xAI Agent Tools API (POST /v1/responses) with the web_search and

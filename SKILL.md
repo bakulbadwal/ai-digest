@@ -1,7 +1,7 @@
 ---
-name: ai-digest
+name: ai-frontier-dispatch
 description: Produce a personalized AI + markets briefing. Use when the user asks for their digest, briefing, roundup, or "what happened this week" in AI/tech/markets. Part A — Frontier & Builders (model releases, what AI-native builders are shipping, a GitHub/Hugging Face scout). Part B — Markets, Deals & Careers (consulting, macro, M&A/VC deal flow, careers, the funded AI stack). Uses a live-X pass via the xAI Grok API plus web search, Hacker News, and trending sweeps.
-when_to_use: Use when the user says "run my digest", "AI digest", "morning briefing", "what did I miss this week", "catch me up on AI", or when a scheduled task invokes it. Also use for a one-off briefing on a custom window.
+when_to_use: Use when the user says "run my digest", "AI Frontier Dispatch", "morning briefing", "what did I miss this week", "catch me up on AI", or when a scheduled task invokes it. Also use for a one-off briefing on a custom window.
 ---
 
 Produce a consolidated AI + markets briefing in **two clearly-separated halves**, so cutting-edge builder signal never gets diluted by business/markets coverage and vice versa. Render a clear visual divider between Part A and Part B. A longer digest is fine — favor substance and real coverage over brevity.
