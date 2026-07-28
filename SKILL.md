@@ -107,7 +107,9 @@ python3 scripts/grok-x-pass.py --days <gap> --prompt "What are notable people sa
 
 Fold each pass into its Part (one-liners + source URLs). **Exit codes:** `0` ok · `2` no `XAI_API_KEY` (fall back to web search silently) · `3` API error (note briefly, fall back). No key? The digest still works on web search alone — the Grok pass just makes it sharper.
 
-**Determining `<gap>`:** compute days since the last run. If you don't know when that was, check the most recent file in `digests/` (if you archive them), ask the user, or default to your `cadence` interval. Getting this wrong is the most common failure — too wide and you re-report old news as new, too narrow and you miss things.
+**Determining `<gap>`:** compute days since the last run by reading the most recent filename in [`digests/`](digests/) (they're named `YYYY-MM-DD.md`). If that folder is empty, ask the user or fall back to the `cadence` interval. Getting this wrong is the most common failure — too wide and you re-report old news as new, too narrow and you miss things.
+
+**When the digest is finished, save it to `digests/YYYY-MM-DD.md`** as well as printing it. That's what makes the next run's gap calculation a lookup instead of a guess.
 
 ---
 

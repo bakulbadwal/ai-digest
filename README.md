@@ -11,9 +11,11 @@ Most AI newsletters stop at headlines and treat every reader the same. This is a
 
 It leans on **[Grok](https://x.ai)** for a live read of X (the only frontier model grounded on live posts), plus web search, **Hacker News**, and **GitHub / Hugging Face** trending. Nothing is hosted, nothing is shared, and there's no list to join — you run it on your own machine, on your own keys.
 
-### 👉 [**Read a real sample digest →**](examples/sample-digest.md)
+![A run of AI Digest](docs/demo.gif)
 
-Actual unedited output from a single run. Worth 60 seconds before you install anything.
+### 👉 [**Read a real digest →**](digests/2026-07-28.md)
+
+Actual unedited output from a single run. Worth 60 seconds before you install anything — and [`digests/`](digests/) keeps every run, so you can see it over time rather than trusting one cherry-picked sample.
 
 ---
 
@@ -128,7 +130,7 @@ python3 scripts/grok-x-pass.py --days 3 --prompt "What are top AI-native builder
 | File | What it is |
 |---|---|
 | `SKILL.md` | The skill — edit the config block at the top to make it yours |
-| `examples/sample-digest.md` | A real, unedited run — see the output before you commit |
+| `digests/` | Archived runs. Real output to read, and how the skill computes "since last digest" |
 | `scripts/grok-x-pass.py` | Standalone live-X read via the xAI Grok API |
 | `.claude-plugin/` | Plugin + marketplace manifests (enables the one-line install) |
 | `.env.example` | Template for your API key |
