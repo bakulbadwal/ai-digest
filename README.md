@@ -9,7 +9,7 @@
 
 Most AI newsletters stop at headlines and treat every reader the same. This is a self-run [Claude Code](https://www.anthropic.com/claude-code) skill that scans the frontier the way *you'd* scan it — model releases, what builders are actually shipping, a GitHub scout tuned to your interests — and pairs it with a markets/deals/careers half, so one briefing covers both the cutting edge and the business world around it.
 
-It leans on **[Grok](https://x.ai)** for a live read of X (the only frontier model grounded on live posts), plus web search, **Hacker News**, and **GitHub / Hugging Face** trending. You bring your own API key; nothing is hosted, nothing is shared, and it costs pennies per run.
+It leans on **[Grok](https://x.ai)** for a live read of X (the only frontier model grounded on live posts), plus web search, **Hacker News**, and **GitHub / Hugging Face** trending. Nothing is hosted, nothing is shared, and there's no list to join — you run it on your own machine, on your own keys.
 
 ### 👉 [**Read a real sample digest →**](examples/sample-digest.md)
 
@@ -34,7 +34,21 @@ Two deliberately-separated halves, so builder signal never gets diluted by busin
 
 - **A relevance filter that knows who you are.** Every candidate is scored on recency, relevance-to-*you*, and substance before a single word gets written. Low scorers are dropped silently.
 - **Source discipline.** AI-news search results are polluted with content farms that invent plausible specifics. The skill corroborates before asserting, labels anything single-sourced as unverified, distrusts star counts and engagement metrics as quality signals, and is instructed to say *"nothing new this window"* rather than pad a section.
-- **Cost tiering built in.** Research fan-out runs on a mid-tier model; only the synthesis uses your best one. That's most of the bill, and it's the difference between a sustainable habit and an expensive novelty.
+- **Cost tiering built in.** Research fan-out runs on a mid-tier model; only the synthesis uses your best one. Most of the token spend is ingestion, and it doesn't need a frontier model.
+
+### Where the method came from
+
+The scoring and filtering logic isn't invented from scratch — it's assembled from the best of the top-starred AI-digest projects on GitHub, adapted for a prompt-only skill:
+
+| Borrowed | From |
+|---|---|
+| Multi-source corroboration as a **positive** ranking signal, not just dedup | [ai-news-radar](https://github.com/LearnPrompt/ai-news-radar) |
+| Fan-out across query variants → dedupe by URL → rank → *then* filter | [agents-radar](https://github.com/duanyytop/agents-radar) |
+| Explicit **negative** preferences alongside positive interests | [ArxivDigest](https://github.com/AutoLLM/ArxivDigest) |
+| Separate scoring axes instead of one blended relevance number | [ai-daily-digest](https://github.com/HarrisHan/ai-daily-digest) |
+| "Never invent content — only report what's actually in the source" | [follow-builders](https://github.com/zarazhangrui/follow-builders) |
+
+Deliberately *not* adopted: scheduled CI runs (this needs Claude Code and your keys, not a CI runner), and source-health tracking or sitemap diffing (both need persistence a markdown-only skill doesn't have).
 
 ---
 

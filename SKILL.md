@@ -87,7 +87,7 @@ The research fan-out is **ingestion**; the synthesis is **judgment**. Tier them 
 
 - **Research subagents → a mid-tier model** (e.g. Sonnet). Dispatch every gathering subagent — HN scan, GitHub/Hugging Face scout, markets research, any web-fetch fan-out — at this tier. This is where the bulk of tokens go and it's pure extraction; quality loss is negligible.
 - **Final synthesis → your top-tier model.** The pre-filter scoring, cross-stream dedup, and the closing "why it matters" are the high-judgment step. Keep them on the best model you have.
-- **Live-X pass → whatever Grok tier you're paying for.** It's cheap and it's the only live-X signal.
+- **Live-X pass → whatever Grok tier you're paying for.** It's the only live-X signal available, and it's a small fraction of the run.
 
 Run the independent research subagents **in parallel in a single message**, not sequentially — it's the difference between a 3-minute digest and a 15-minute one.
 

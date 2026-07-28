@@ -1,74 +1,192 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="AI Digest — noise to signal">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="AI Digest — a personalized AI and markets briefing you run yourself">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#080c18"/>
-      <stop offset="1" stop-color="#0d1428"/>
+    <!-- warm paper canvas -->
+    <linearGradient id="paper" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#faf9f5"/>
+      <stop offset="1" stop-color="#f3eee4"/>
     </linearGradient>
-    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#4ade80"/>
-      <stop offset="1" stop-color="#38bdf8"/>
+    <radialGradient id="warmth" cx="0.14" cy="0.1" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="coralBloom" cx="0.78" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="#cc785c" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#cc785c" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- dark inset panel -->
+    <linearGradient id="panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#252320"/>
+      <stop offset="1" stop-color="#161513"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.92" cy="0.45" r="0.5">
-      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.14"/>
-      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="nodeGlow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="panelEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <!-- signal bars -->
+    <linearGradient id="barTop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#cc785c"/>
+      <stop offset="1" stop-color="#e8a55a"/>
+    </linearGradient>
+    <linearGradient id="barMid" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5db8a6"/>
+      <stop offset="1" stop-color="#5db8a6" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="funnel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cc785c" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#cc785c" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#cc785c" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="panelShadow" x="-12%" y="-24%" width="128%" height="152%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#4a3a2c" flood-opacity="0.20"/>
+    </filter>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+
+    <clipPath id="panelClip">
+      <rect x="704" y="74" width="500" height="292" rx="16"/>
+    </clipPath>
   </defs>
 
-  <rect width="1280" height="440" fill="url(#bg)"/>
-  <rect width="1280" height="440" fill="url(#glow)"/>
+  <!-- ───────────────────────── canvas ───────────────────────── -->
+  <rect width="1280" height="440" fill="url(#paper)"/>
+  <rect width="1280" height="440" fill="url(#warmth)"/>
+  <rect width="1280" height="440" fill="url(#coralBloom)"/>
 
-  <!-- ── noise → signal motif (right side): scatter converging into one clean line ── -->
-  <g>
-    <!-- noise field: wide vertical scatter that tightens toward the line -->
-    <circle cx="712" cy="128" r="3.0" fill="#64748b" opacity="0.50"/>
-    <circle cx="726" cy="292" r="2.6" fill="#64748b" opacity="0.44"/>
-    <circle cx="739" cy="183" r="3.2" fill="#7dd3fc" opacity="0.48"/>
-    <circle cx="748" cy="248" r="2.4" fill="#64748b" opacity="0.55"/>
-    <circle cx="762" cy="152" r="2.9" fill="#64748b" opacity="0.48"/>
-    <circle cx="771" cy="305" r="2.5" fill="#4ade80" opacity="0.40"/>
-    <circle cx="778" cy="271" r="2.7" fill="#64748b" opacity="0.46"/>
-    <circle cx="791" cy="196" r="3.3" fill="#7dd3fc" opacity="0.52"/>
-    <circle cx="799" cy="120" r="2.4" fill="#64748b" opacity="0.42"/>
-    <circle cx="806" cy="243" r="2.6" fill="#64748b" opacity="0.58"/>
-    <circle cx="818" cy="139" r="2.8" fill="#64748b" opacity="0.46"/>
-    <circle cx="833" cy="287" r="3.0" fill="#64748b" opacity="0.48"/>
-    <circle cx="847" cy="175" r="2.6" fill="#4ade80" opacity="0.52"/>
-    <circle cx="861" cy="228" r="3.2" fill="#64748b" opacity="0.60"/>
-    <circle cx="874" cy="158" r="2.5" fill="#64748b" opacity="0.48"/>
-    <circle cx="888" cy="262" r="2.9" fill="#7dd3fc" opacity="0.52"/>
-    <circle cx="902" cy="199" r="2.7" fill="#64748b" opacity="0.62"/>
-    <circle cx="915" cy="246" r="3.0" fill="#64748b" opacity="0.50"/>
-    <circle cx="929" cy="170" r="2.5" fill="#64748b" opacity="0.55"/>
-    <circle cx="942" cy="225" r="3.2" fill="#4ade80" opacity="0.55"/>
-    <circle cx="956" cy="190" r="2.6" fill="#64748b" opacity="0.60"/>
-    <circle cx="969" cy="243" r="2.8" fill="#64748b" opacity="0.52"/>
-    <circle cx="983" cy="205" r="3.0" fill="#7dd3fc" opacity="0.62"/>
-    <circle cx="996" cy="231" r="2.5" fill="#64748b" opacity="0.58"/>
-    <circle cx="1010" cy="198" r="2.7" fill="#64748b" opacity="0.66"/>
-    <circle cx="1023" cy="222" r="2.9" fill="#4ade80" opacity="0.64"/>
-    <circle cx="1036" cy="207" r="2.5" fill="#64748b" opacity="0.62"/>
-    <circle cx="1049" cy="219" r="2.7" fill="#7dd3fc" opacity="0.70"/>
-    <circle cx="1061" cy="209" r="2.4" fill="#64748b" opacity="0.66"/>
-    <circle cx="1073" cy="216" r="2.5" fill="#4ade80" opacity="0.72"/>
-    <circle cx="1084" cy="211" r="2.3" fill="#7dd3fc" opacity="0.76"/>
-    <!-- the clean signal line the noise resolves into -->
-    <line x1="1094" y1="213" x2="1216" y2="213" stroke="url(#signal)" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="1216" cy="213" r="16" fill="url(#nodeGlow)"/>
-    <circle cx="1216" cy="213" r="5.5" fill="#e0f2fe"/>
-    <!-- motif label -->
-    <text x="988" y="308" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" letter-spacing="3" fill="#475569">NOISE &#8594; SIGNAL</text>
+  <!-- faint editorial grid rules -->
+  <g stroke="#141413" stroke-opacity="0.05">
+    <line x1="80" y1="96" x2="1200" y2="96"/>
+    <line x1="80" y1="368" x2="1200" y2="368"/>
   </g>
 
-  <!-- ── text block ── -->
-  <text x="80" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="5" fill="#7dd3fc" opacity="0.85">RUN IT YOURSELF &#183; 3X A WEEK &#183; PENNIES PER RUN</text>
+  <!-- ───────────────────── left: masthead ───────────────────── -->
 
-  <text x="76" y="266" font-family="Georgia, 'Times New Roman', serif" font-size="128" font-weight="700" fill="#f8fafc">AI Digest</text>
+  <!-- eyebrow -->
+  <text x="80" y="140" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="13" font-weight="500" letter-spacing="2.6" fill="#8e8b82">PERSONALIZED &#183; RUNS ON YOUR MACHINE</text>
 
-  <text x="80" y="322" font-family="-apple-system, 'Segoe UI', Roboto, sans-serif" font-size="28" fill="#94a3b8">Your AI + markets briefing &#8212; not a newsletter you subscribe to.</text>
+  <!-- wordmark -->
+  <text x="78" y="242" font-family="Copernicus, 'Tiempos Headline', Georgia, 'Times New Roman', serif"
+        font-size="104" font-weight="400" letter-spacing="-3" fill="#141413">AI Digest</text>
 
-  <text x="80" y="408" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="2" fill="#475569">grok live&#8211;X &#183; web &#183; hacker news &#183; github trending</text>
+  <!-- coral rule: short solid segment + hairline continuation -->
+  <rect x="80" y="268" width="86" height="3" rx="1.5" fill="#cc785c"/>
+  <rect x="166" y="269" width="392" height="1" fill="#141413" opacity="0.14"/>
+
+  <!-- subhead -->
+  <text x="80" y="308" font-family="StyreneB, Inter, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="23" font-weight="400" fill="#3d3d3a">Frontier signal and market signal &#8212;</text>
+  <text x="80" y="338" font-family="StyreneB, Inter, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="23" font-weight="400" fill="#3d3d3a">one briefing, tuned to you.</text>
+
+  <!-- source line -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#6c6a64">
+    <text x="80" y="404" letter-spacing="0.8">grok live&#8211;X</text>
+    <text x="184" y="404" fill="#cbc3b6">&#183;</text>
+    <text x="200" y="404" letter-spacing="0.8">hacker news</text>
+    <text x="310" y="404" fill="#cbc3b6">&#183;</text>
+    <text x="326" y="404" letter-spacing="0.8">github</text>
+    <text x="392" y="404" fill="#cbc3b6">&#183;</text>
+    <text x="408" y="404" letter-spacing="0.8">hugging face</text>
+    <text x="524" y="404" fill="#cbc3b6">&#183;</text>
+    <text x="540" y="404" letter-spacing="0.8">markets</text>
+  </g>
+
+  <!-- ────────────── right: dark panel, noise → signal ────────────── -->
+  <g filter="url(#panelShadow)">
+    <rect x="704" y="74" width="500" height="292" rx="16" fill="url(#panel)"/>
+  </g>
+
+  <g clip-path="url(#panelClip)">
+    <!-- inner top-light -->
+    <rect x="704" y="74" width="500" height="292" fill="url(#panelEdge)"/>
+
+    <!-- noise field (left third): unranked scatter -->
+    <g fill="#6c6a64">
+      <circle cx="736" cy="150" r="2.6" opacity="0.55"/>
+      <circle cx="757" cy="182" r="2.1" opacity="0.42"/>
+      <circle cx="731" cy="212" r="2.9" opacity="0.50"/>
+      <circle cx="762" cy="247" r="2.2" opacity="0.38"/>
+      <circle cx="740" cy="288" r="2.7" opacity="0.52"/>
+      <circle cx="769" cy="318" r="2.0" opacity="0.34"/>
+      <circle cx="789" cy="163" r="2.4" opacity="0.46"/>
+      <circle cx="795" cy="226" r="2.8" opacity="0.44"/>
+      <circle cx="783" cy="300" r="2.2" opacity="0.40"/>
+      <circle cx="812" cy="192" r="2.5" opacity="0.48"/>
+      <circle cx="818" cy="266" r="2.1" opacity="0.36"/>
+      <circle cx="806" cy="132" r="1.9" opacity="0.30"/>
+      <circle cx="828" cy="330" r="1.8" opacity="0.28"/>
+      <circle cx="748" cy="256" r="2.3" opacity="0.44"/>
+      <circle cx="772" cy="140" r="2.0" opacity="0.36"/>
+      <circle cx="800" cy="196" r="2.2" opacity="0.40"/>
+      <circle cx="762" cy="207" r="1.8" opacity="0.32"/>
+      <circle cx="736" cy="326" r="2.4" opacity="0.42"/>
+      <circle cx="822" cy="152" r="2.2" opacity="0.38"/>
+      <circle cx="792" cy="340" r="1.9" opacity="0.30"/>
+      <circle cx="828" cy="222" r="2.0" opacity="0.34"/>
+      <circle cx="752" cy="122" r="2.1" opacity="0.34"/>
+      <circle cx="814" cy="298" r="2.3" opacity="0.40"/>
+      <circle cx="776" cy="268" r="1.9" opacity="0.30"/>
+      <circle cx="838" cy="184" r="1.8" opacity="0.28"/>
+      <circle cx="744" cy="234" r="2.0" opacity="0.36"/>
+      <circle cx="836" cy="258" r="1.9" opacity="0.30"/>
+      <circle cx="806" cy="240" r="2.1" opacity="0.34"/>
+    </g>
+    <!-- a few already-warm candidates inside the noise -->
+    <circle cx="774" cy="204" r="2.9" fill="#cc785c" opacity="0.60"/>
+    <circle cx="801" cy="272" r="2.5" fill="#e8a55a" opacity="0.50"/>
+    <circle cx="746" cy="172" r="2.3" fill="#5db8a6" opacity="0.45"/>
+    <circle cx="820" cy="312" r="2.2" fill="#cc785c" opacity="0.40"/>
+
+    <!-- the filter: a vertical light seam the noise passes through -->
+    <rect x="856" y="126" width="1.5" height="216" fill="url(#funnel)"/>
+    <g opacity="0.6" filter="url(#softGlow)">
+      <rect x="854.5" y="164" width="4" height="132" fill="#cc785c" opacity="0.55"/>
+    </g>
+    <!-- threshold chip: the actual pre-filter cutoff -->
+    <rect x="833" y="138" width="48" height="19" rx="9.5" fill="#cc785c" opacity="0.16"/>
+    <rect x="833" y="138" width="48" height="19" rx="9.5" fill="none" stroke="#cc785c" stroke-opacity="0.45"/>
+    <text x="857" y="151.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+          font-size="10.5" letter-spacing="0.4" fill="#e8a55a" text-anchor="middle">&#8805;3/5</text>
+
+    <!-- signal: ranked digest rows emerging right of the seam -->
+    <g>
+      <!-- row 1 (top-ranked) -->
+      <circle cx="884" cy="146" r="3.2" fill="#cc785c"/>
+      <rect x="898" y="142.5" width="242" height="7" rx="3.5" fill="url(#barTop)"/>
+      <rect x="898" y="157" width="150" height="4" rx="2" fill="#faf9f5" opacity="0.16"/>
+
+      <!-- row 2 -->
+      <circle cx="884" cy="192" r="2.9" fill="#e8a55a"/>
+      <rect x="898" y="188.5" width="208" height="7" rx="3.5" fill="url(#barTop)" opacity="0.82"/>
+      <rect x="898" y="203" width="118" height="4" rx="2" fill="#faf9f5" opacity="0.13"/>
+
+      <!-- row 3 -->
+      <circle cx="884" cy="238" r="2.7" fill="#5db8a6"/>
+      <rect x="898" y="234.5" width="176" height="7" rx="3.5" fill="url(#barMid)"/>
+      <rect x="898" y="249" width="96" height="4" rx="2" fill="#faf9f5" opacity="0.11"/>
+
+      <!-- row 4 -->
+      <circle cx="884" cy="284" r="2.4" fill="#8e8b82"/>
+      <rect x="898" y="280.5" width="140" height="7" rx="3.5" fill="#faf9f5" opacity="0.20"/>
+      <rect x="898" y="295" width="76" height="4" rx="2" fill="#faf9f5" opacity="0.09"/>
+
+      <!-- row 5 (fading — below threshold) -->
+      <circle cx="884" cy="326" r="2.1" fill="#6c6a64" opacity="0.6"/>
+      <rect x="898" y="322.5" width="104" height="7" rx="3.5" fill="#faf9f5" opacity="0.10"/>
+    </g>
+
+    <!-- panel captions -->
+    <text x="736" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+          font-size="10" letter-spacing="2.2" fill="#8e8b82">NOISE</text>
+    <text x="1172" y="108" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+          font-size="10" letter-spacing="2.2" fill="#cc785c">RANKED SIGNAL</text>
+  </g>
+
+  <!-- panel hairline -->
+  <rect x="704" y="74" width="500" height="292" rx="16" fill="none" stroke="#141413" stroke-opacity="0.16"/>
 </svg>
