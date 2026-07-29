@@ -54,6 +54,8 @@ The scoring and filtering logic isn't invented from scratch — it's assembled f
 
 Deliberately *not* adopted: scheduled CI runs (this needs Claude Code and your keys, not a CI runner), and source-health tracking or sitemap diffing (both need persistence a markdown-only skill doesn't have).
 
+📄 **[Case study →](CASE_STUDY.md)** — the product write-up: the problem, the decisions and tradeoffs, how I'd measure it, and what I chose not to build.
+
 ---
 
 ## Install
