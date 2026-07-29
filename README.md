@@ -34,9 +34,11 @@ Two deliberately-separated halves, so builder signal never gets diluted by busin
 
 **What makes it different from a news feed:**
 
-- **A relevance filter that knows who you are.** Every candidate is scored on recency, relevance-to-*you*, and substance before a single word gets written. Low scorers are dropped silently.
-- **Source discipline.** AI-news search results are polluted with content farms that invent plausible specifics. The skill corroborates before asserting, labels anything single-sourced as unverified, distrusts star counts and engagement metrics as quality signals, and is instructed to say *"nothing new this window"* rather than pad a section.
-- **Cost tiering built in.** Research fan-out runs on a mid-tier model; only the synthesis uses your best one. Most of the token spend is ingestion, and it doesn't need a frontier model.
+- **A relevance filter that knows who you are.** Every candidate is scored on recency, relevance-to-*you*, and substance before a single word gets written. You also declare what to actively **exclude** — a filter with no negative space keeps surfacing things that are technically on-topic and useless. Low scorers are dropped silently.
+- **Corroboration is a ranking signal, not just dedup.** A story that arrives independently via Grok, Hacker News, *and* web search gets a point and an inline `[3 sources]` tag. One that shows up only on aggregator domains loses one. Independent arrival is real evidence something matters.
+- **Source discipline.** AI-news search results are polluted with content farms that invent plausible specifics. The skill corroborates before asserting, labels anything single-sourced as unverified, distrusts star counts and trending positions as quality signals, and is instructed to say *"nothing new this window"* rather than pad a section.
+- **No filler.** If an item has no genuinely distinct "why this matters," that line is omitted rather than generated. Each half closes with 2-3 cross-cutting patterns — the part you can't get from a headline feed.
+- **Cost tiering built in.** Research fan-out runs on a mid-tier model in parallel; only the synthesis uses your best one. Most of the token spend is ingestion, and ingestion doesn't need a frontier model.
 
 ### Where the method came from
 
