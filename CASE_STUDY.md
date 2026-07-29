@@ -31,14 +31,14 @@ The second insight is smaller and more surprising: **independent arrival is evid
 
 | Decision | Why | Tradeoff accepted |
 |---|---|---|
-| **Prompt-only skill — no backend, no database, no build step** | Portability is the whole product. A markdown file runs anywhere an agent harness runs, and anyone can read the entire thing before trusting it. | No persistence. Rules out embeddings-based dedup and source-health scoring over time. Real losses, smaller than the distribution gain. |
-| **Ship as an installable plugin, not just a repo to clone** | The intended audience includes people who don't know what a repo is. "Clone this into `~/.claude/skills/`" is exactly where they bounce. | Two manifests to maintain and a namespace to own. Worth it — install friction was the single biggest adoption risk, and it's the one you can't recover from. |
+| **Portable skill plus an optional local event ledger** | The research method remains readable Markdown, while one dependency-free script adds run state, source health, and claim evidence without a hosted backend. | More surface area than the original prompt-only version. State is append-only, local, and optional so portability remains the default. |
+| **Ship through thin harness adapters** | Claude and Codex differ in invocation, tools, and model fan-out, but the relevance and evidence method should not fork. | Two small adapters to test and maintain. Worth it because duplicated core prompts would drift much faster. |
 | **Corroboration as a positive ranking signal, not just dedup** | Independent arrival across separate streams is real evidence something matters. | Slight bias toward stories with broad pickup. Mitigated because the relevance axis is user-defined and pulls the other way. |
 | **Explicit exclude list alongside stated interests** | Negative preferences catch what positive ones can't: the item that matches your topics and still wastes your time. | More configuration for the user to complete. Accepted, and it's prompted rather than optional-in-practice. |
 | **Instructed to report "nothing new this window" rather than pad** | An honest empty section is information. Filler trains the reader to skim *every* section, which destroys the product. | Some runs look thin. Correct tradeoff — perceived thoroughness is a vanity metric. |
 | **Two halves with a hard divider — frontier vs. markets** | The two need different sources and a different reading posture; blending them dulls both. | Longer output than a single feed. Acceptable: this is a briefing, not a notification. |
-| **Tiered models — mid-tier for research fan-out, top-tier for synthesis only** | Most of the token spend is ingestion, and ingestion doesn't need frontier judgment. | Slightly more orchestration. Pays for itself on the first run and makes the habit sustainable. |
-| **Borrowed the ranking logic instead of inventing it** | Five techniques already existed in the top-starred projects in this category and were better than what I'd write cold. Read them, took what worked, documented what I rejected and why. | Obligation to credit precisely and stay honest about what's mine. That's a feature — the [provenance table](./README.md#where-the-method-came-from) is itself the argument that the design was researched rather than guessed. |
+| **Tiered models — cost-efficient research fan-out, strongest model for synthesis** | Most token spend is ingestion, while ranking contradictions and implications require judgment. | Harnesses expose model tiering differently, so each adapter must degrade honestly when overrides are unavailable. |
+| **Borrowed the ranking logic instead of inventing it** | Five techniques already existed in the top-starred projects in this category and were better than what I'd write cold. Read them, took what worked, documented what I rejected and why. | Obligation to credit precisely and stay honest about what's mine. That's a feature — the [provenance table](./README.md#method-provenance) is itself the argument that the design was researched rather than guessed. |
 
 ## Designing for honest failure
 
@@ -62,7 +62,7 @@ Most content products optimize the opposite direction. The bet is that a reader 
 
 ## Roadmap — and where this actually goes
 
-1. **Close the feedback loop.** The biggest gap: nothing currently learns from which items led anywhere. The archive of past runs is already the substrate for it — a lightweight "was this useful" pass writing back into the scoring config would make the filter improve rather than merely persist.
+1. **Close the usefulness feedback loop.** Run state and claim evidence now persist, but the system still does not learn which items led to a decision, build, application, or investment view. A lightweight explicit outcome signal should improve ranking without silently rewriting the reader's profile.
 2. **Optional research module.** A narrow, off-by-default arXiv path for forkers doing technical work. Deliberately not on by default — for most readers it adds volume, not signal.
 3. **Sharper exclusion defaults.** Right now negative preferences start empty. Shipping a sensible starter list would raise first-run quality, which is where adoption is won or lost.
 
@@ -76,4 +76,4 @@ It also documents the less comfortable half of product work: reading the competi
 
 ---
 
-*Tech: a single markdown skill file plus one Python script for the live-X pass, distributed as a Claude Code plugin. No backend, no dependencies, bring-your-own-key. Part of a broader portfolio at [github.com/bakulbadwal](https://github.com/bakulbadwal).*
+*Tech: one portable Markdown skill, Claude and Codex adapters, a dependency-free append-only state CLI, and an optional Python live-X pass. No hosted backend; bring your own key. Part of a broader portfolio at [github.com/bakulbadwal](https://github.com/bakulbadwal).*

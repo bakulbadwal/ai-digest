@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bakulbadwal/ai-frontier-dispatch/schemas/claim-evidence.schema.json",
+  "title": "AI Frontier Dispatch claim-evidence record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_id", "run_id", "claim", "classification", "confidence", "sources", "recorded_at"],
+  "properties": {
+    "claim_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "minLength": 1},
+    "claim": {"type": "string", "minLength": 1},
+    "classification": {"enum": ["fact", "thesis", "deal-status"]},
+    "confidence": {"enum": ["verified", "corroborated", "single-source", "unverified"]},
+    "sources": {
+      "type": "array",
+      "items": {"type": "string", "format": "uri"},
+      "uniqueItems": true
+    },
+    "as_of": {"type": "string", "format": "date"},
+    "notes": {"type": "string"},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"classification": {"const": "deal-status"}}},
+      "then": {"required": ["as_of"]}
+    },
+    {
+      "if": {"properties": {"confidence": {"const": "corroborated"}}},
+      "then": {"properties": {"sources": {"minItems": 2}}}
+    }
+  ]
+}

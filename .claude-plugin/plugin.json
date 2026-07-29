@@ -1,7 +1,7 @@
 {
   "name": "ai-frontier-dispatch",
-  "description": "A personalized AI + markets briefing you run yourself. Part A covers frontier model releases, what AI-native builders are shipping, and a GitHub/Hugging Face scout tuned to your interests. Part B covers consulting, macro, M&A/VC deal flow, and careers.",
-  "version": "1.1.0",
+  "description": "A portable, source-disciplined AI + markets briefing with a Claude adapter, optional local state, source-health tracking, and explicit claim evidence.",
+  "version": "2.0.0",
   "author": {
     "name": "Bakul Badwal",
     "url": "https://github.com/bakulbadwal"

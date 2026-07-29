@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Frontier Dispatch"
+  short_description: "Personalized AI and markets briefing"
+  default_prompt: "Use $ai-frontier-dispatch to produce my source-disciplined AI and markets briefing."

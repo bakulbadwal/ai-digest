@@ -2,3 +2,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Private reader configuration and local state.
+config/dispatch.local.yaml
+.ai-frontier-dispatch/
+state/

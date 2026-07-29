@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bakulbadwal/ai-frontier-dispatch/schemas/source-health.schema.json",
+  "title": "AI Frontier Dispatch source check",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_id", "run_id", "url", "stream", "status", "recorded_at"],
+  "properties": {
+    "source_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "minLength": 1},
+    "url": {"type": "string", "format": "uri"},
+    "stream": {"type": "string", "minLength": 1},
+    "status": {"enum": ["ok", "degraded", "blocked", "failed"]},
+    "title": {"type": "string"},
+    "error": {"type": "string"},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  }
+}

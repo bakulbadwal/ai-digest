@@ -1,0 +1,52 @@
+reader_profile: >
+  Describe your role, what you are building, and what you are hiring,
+  recruiting, or investing for in one to three specific sentences.
+
+cadence: "three times a week"
+
+watchlist:
+  builders_and_researchers:
+    - Andrej Karpathy
+    - Simon Willison
+    - Hamel Husain
+  lab_leaders:
+    - Demis Hassabis
+    - Sam Altman
+  companies_to_track:
+    - Anysphere
+    - Together AI
+
+github_profile: "https://github.com/your-username"
+interest_areas:
+  - AI agents and coding-agent tooling
+  - Your primary domain
+  - Your secondary domain
+
+never_recommend: []
+exclude_topics:
+  - AI opinion pieces with no new facts
+  - Prompt-engineering listicles
+
+part_b_categories:
+  - Consulting & Strategy
+  - Macro & Investment Trends
+  - Capital Markets & M&A
+  - Careers
+  - The Established AI Stack
+
+career_track:
+  - Your target role
+
+thesis_watch:
+  enabled: false
+  thesis: "One falsifiable claim you want to track"
+  indicators:
+    - "Indicator, current baseline, and date"
+  rule: "Report only movement since the previous run. Zero lines is valid."
+
+state:
+  enabled: true
+  # Default: ~/.ai-frontier-dispatch/events.jsonl
+  # Set AI_FRONTIER_DISPATCH_HOME to keep state elsewhere.
+  record_claims: "material claims only"
+  record_source_health: true

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bakulbadwal/ai-frontier-dispatch/schemas/run-record.schema.json",
+  "title": "AI Frontier Dispatch materialized run",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["run_id", "harness", "profile", "window", "started_at", "status", "sources", "claims"],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "harness": {"enum": ["claude", "codex", "other"]},
+    "profile": {"type": "string", "minLength": 1},
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": {"type": "string", "format": "date"},
+        "end": {"type": "string", "format": "date"}
+      }
+    },
+    "started_at": {"type": "string", "format": "date-time"},
+    "finished_at": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["running", "completed", "partial", "failed"]},
+    "digest": {"type": "string"},
+    "sources": {"type": "array"},
+    "claims": {"type": "array"}
+  }
+}
