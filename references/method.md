@@ -99,7 +99,27 @@ Repeated failure is a routing signal. It does not make the source unreliable; it
 
 Keep a hard visual divider between the halves.
 
-## 8. Output and close
+## 8. Run a thesis watch that can lose
+
+A thesis watch is the optional Part B section where the reader tracks a standing hypothesis across runs. Configure it only when the reader has one. Its value comes entirely from being falsifiable, so structure it as instrumentation rather than as a recurring argument.
+
+Define each watch with three parts:
+
+- **A primary tell.** The single observable the reader believes moves first, with a numeric baseline and a stated threshold. Without a threshold there is no way to be wrong.
+- **Secondary conditions.** Supporting observables that would corroborate the thesis but are not decisive alone.
+- **A concealed channel.** Where the same risk would accumulate if the primary tell stayed quiet — off-balance-sheet structures, privately marked assets, lagged or discretionary valuations, adjacent leverage. Most theses fail here rather than being wrong, because the visible instrument is the one everyone else is also watching, and pressure routes around it.
+
+Report only what moved since the last run. Zero lines is a valid result.
+
+Three rules keep the section honest:
+
+1. **Lead with disconfirming movement.** When the primary tell moves against the thesis, say so first and plainly. A watch that surfaces only confirming evidence has stopped being a monitor.
+2. **Name divergence as its own state.** A quiet primary tell alongside a deteriorating concealed channel is a specific, reportable condition — risk relocating rather than resolving. It is more informative than either reading alone.
+3. **Never silently drop a tell.** Omitting an indicator in the run where it disagrees is the failure mode this structure exists to prevent. If an indicator could not be checked, record it as `blocked` or `failed` rather than leaving it out.
+
+Distinguish a dated measurement from an undated reference figure. Pricing-guide numbers, vendor marketing tables, and stale baselines are not evidence that something moved; label them as background or omit them.
+
+## 9. Output and close
 
 - Use one-line takeaways with direct links.
 - Include an insight only when it is distinct from the factual takeaway.
