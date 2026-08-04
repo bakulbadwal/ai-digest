@@ -21,9 +21,31 @@ Gather these streams independently before ranking:
 - Consulting, macro, capital-markets, M&A/VC, career, and established-stack sources.
 - Optional live-X pass through Grok.
 
-For Hacker News, fan out across `AI`, `LLM`, `agents`, major labs, and one reader-domain term. Merge, deduplicate by canonical URL, rank by relevance, and inspect only the strongest candidates.
+### Hacker News
 
-For GitHub and Hugging Face, treat stars, likes, downloads, and trending placement as discovery signals—not proof of quality. Prefer release notes, documentation, commits, model cards, and direct project evidence.
+A single query has poor recall. Fan out across `AI`, `LLM`, `agents`, major lab names, and one rotating reader-domain term, then merge, deduplicate by canonical URL, sort by points, and inspect only the strongest candidates.
+
+The Algolia endpoint takes a date floor and a points floor directly:
+
+```
+https://hn.algolia.com/api/v1/search_by_date?tags=story&query=<term>&numericFilters=created_at_i><unix-ts>,points><threshold>
+```
+
+Compute `<unix-ts>` from the window start rather than hardcoding it, and pair the per-term queries with `?tags=front_page` for what is live right now. Raise the points threshold for busy windows and lower it for quiet ones; a threshold that returns nothing is a signal about the threshold, not about the window.
+
+### GitHub and Hugging Face
+
+Treat stars, likes, downloads, and trending placement as discovery signals—not proof of quality. These are the most gameable numbers in the ecosystem and they are actively gamed. Prefer release notes, documentation, commits, issue threads, model cards, and direct project evidence.
+
+**Prefer sustained engagement over novelty spikes.** Verify candidates through the API rather than the rendered page, and check `stargazers_count` against `open_issues_count`, `created_at`, and `pushed_at` together. The star-farming signature is consistent:
+
+- A vertical star curve against near-zero open issues. Real adoption generates questions; stars without issues means nobody is using it.
+- Commits clustered into a single day or a few minutes, then no pushes while stars keep accruing.
+- A high star count on a repo whose last push is weeks old — trending in search, dead in practice.
+
+Report what was excluded and why rather than dropping it silently, and note when a filter could not be applied at all: a repository with issues disabled cannot be scored on engagement, which is a caveat rather than a pass.
+
+For model hubs, report new frontier-scale open releases, large movers against the previous run's baseline, and entries that tell a story — a community distill or quantization of a frontier model, a lab's weights landing after an API-only launch, a licensing change. Carry `createdAt` so a stale-but-charting model is not written up as new. Watch the **download-to-like ratio**: an extreme skew toward downloads indicates automated or pipeline pulling rather than community interest, and the two mean different things. Skip perennial small-model and OCR filler unless it signals a trend.
 
 ## 3. Normalize and deduplicate
 
