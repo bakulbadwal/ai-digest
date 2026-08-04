@@ -40,7 +40,18 @@ career_track:
 thesis_watch:
   enabled: false
   thesis: "One falsifiable claim you want to track"
-  indicators:
+  # The observable you believe moves first. A threshold is what makes the
+  # thesis capable of losing; without one there is nothing to disconfirm.
+  primary_tell:
+    indicator: "What you watch, its current baseline, and the date of that baseline"
+    threshold: "The move that would count as the thesis confirming"
+  # Corroborating, but not decisive on their own.
+  secondary_conditions:
+    - "Indicator, current baseline, and date"
+  # Where the same risk accumulates if the primary tell stays quiet:
+  # off-balance-sheet structures, privately marked assets, lagged or
+  # discretionary valuations, adjacent leverage.
+  concealed_channel:
     - "Indicator, current baseline, and date"
   rule: "Report only movement since the previous run. Zero lines is valid."
 
